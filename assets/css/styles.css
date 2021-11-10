@@ -7,3 +7,16 @@
     max-width: 50%;
     margin: auto;
 }
+
+#form {
+    margin: auto;
+    text-align: center;
+    background-color: cornflowerblue;
+    max-width: 25%;
+    padding: 2%;
+    border-radius: 5%;
+}
+
+input {
+    width: 75%;
+}
