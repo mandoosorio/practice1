@@ -20,3 +20,25 @@
 input {
     width: 75%;
 }
+
+#sidebar {
+    background-color: cornflowerblue;
+    width: 25%;
+    height: 100vh;
+    float: left;
+}
+
+#main {
+    background-color: crimson;
+    width: 75%;
+    height: 100vh;
+    float: left;
+}
+
+#footer {
+    clear: both;
+}
+
+#search {
+    width: 50%;
+}

@@ -34,3 +34,40 @@ function formSubmission() {
 
     console.log(answers);
 }
+
+
+////////////////////////////////////////////////////////////////////////
+
+var inputField = document.getElementById("search");
+var sidebar = document.getElementById("sidebar");
+var createBtn = document.getElementById("createBtn");
+
+var buttonArray = [];
+if (localStorage.getItem("buttons")) {
+    buttonArray = localStorage.getItem("buttons");
+    buttonArray = "button4";
+}
+console.log(buttonArray);
+
+
+createBtn.addEventListener("click", function() {
+    //console.log("button was clicked");
+    //console.log(inputField.value);
+    buttonArray.push(inputField.value);
+    localStorage.setItem("buttons", buttonArray);
+
+    console.log(localStorage.getItem("buttons"));
+
+    var button = document.createElement("button");
+    button.innerText = inputField.value;
+    sidebar.appendChild(button);
+
+    var br = document.createElement("br");
+    sidebar.appendChild(br);
+
+    inputField.value = "";
+})
+
+// local storage
+// localStorage.setItem()
+// localStorage.getItem()
