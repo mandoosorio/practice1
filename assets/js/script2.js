@@ -30,3 +30,5 @@ function somethingElse() {
 
 //var2 does not exist here
 //var1 does exist here
+
+//comment
