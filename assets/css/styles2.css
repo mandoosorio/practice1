@@ -1,0 +1,27 @@
+#main {
+    width: 50%;
+    height: 500px;
+    background-color: darkgreen;
+    display: flex;
+    /*overidden by flex property*/
+    flex-wrap: wrap;
+}
+
+.child {
+    /*applied to divs within parent div */
+     /* 1 spaces divs out evenly -- 0 spaces divs by one word*/
+     -ms-flex: 1;  /* IE 10 (internet explorer compatible) */  
+     flex: 1;
+}
+
+#div1 {
+    height: 200px;
+    width: 200px;
+    background-color: cornflowerblue;
+}
+
+#div2 {
+    height: 200px;
+    width: 200px;
+    background-color: crimson;
+}
