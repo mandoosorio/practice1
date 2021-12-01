@@ -42,11 +42,30 @@ var inputField = document.getElementById("search");
 var sidebar = document.getElementById("sidebar");
 var createBtn = document.getElementById("createBtn");
 
+//empty array to store search inputs
 var buttonArray = [];
-if (localStorage.getItem("buttons")) {
-    buttonArray = localStorage.getItem("buttons");
-    buttonArray = "button4";
+
+function buttonClick(event) {
+    // console.log(event);
+    // console.log(event.target.innerText);
+    // console.log("clicked");
+    inputField.value = event.target.innerText;
 }
+
+if (localStorage.getItem("buttons")) {
+    buttonArray = JSON.parse(localStorage.getItem("buttons"));
+    
+    for (var i = 0; i < buttonArray.length; i++) {
+        var button = document.createElement("button");
+        button.innerText = buttonArray[i];
+        button.addEventListener("click", buttonClick);
+        sidebar.appendChild(button);
+
+        var br = document.createElement("br");
+        sidebar.appendChild(br);
+    }
+}
+
 console.log(buttonArray);
 
 
@@ -54,13 +73,14 @@ createBtn.addEventListener("click", function() {
     //console.log("button was clicked");
     //console.log(inputField.value);
     buttonArray.push(inputField.value);
-    localStorage.setItem("buttons", buttonArray);
+    localStorage.setItem("buttons", JSON.stringify(buttonArray));
 
-    console.log(localStorage.getItem("buttons"));
+    //console.log(localStorage.getItem("buttons"));
 
-    var button = document.createElement("button");
-    button.innerText = inputField.value;
-    sidebar.appendChild(button);
+    var button2 = document.createElement("button");
+    button2.innerText = inputField.value;
+    button2.addEventListener("click", buttonClick);
+    sidebar.appendChild(button2);
 
     var br = document.createElement("br");
     sidebar.appendChild(br);
