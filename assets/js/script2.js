@@ -29,6 +29,8 @@ if (question3) {
 
 
 console.log(myCharacters);
+console.log("something");
+console.log("something else");
 
 //"({[`'some test'`]})"
 
